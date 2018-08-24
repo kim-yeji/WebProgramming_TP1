@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>TODO in HTML5 Skeleton</title>
+<link rel="stylesheet" type="text/css" href="TP1_css.css" />
+<link rel="stylesheet" type="text/css" href="Popup_css.css">
+<script src="Popup_js.js"></script>
+<script src="TP1_js.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="header">
+		<div class="lAr">
+			<input type="button" value=" Add ToDo " onclick="addTodo()"  >
+		</div>
+		<div class="rAr">
+			<select id="searchDay" name="searchDay" onchange="searchItem()">
+				<option value="">day</option>
+				<option value="Mon">Mon</option>
+				<option value="Tue">Tue</option>
+				<option value="Wed">Wed</option>
+				<option value="Thu">Thu</option>
+				<option value="Fri">Fri</option>
+			</select>
+
+			<input type="text" id="searchItem" name="searchItem" onkeyup="if(window.event.keyCode == 13){searchItem();}" placeholder="Enter your keyword here" style="width: 200px;" >
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="Mon">
+			<div class="middleTop">
+			<strong>Mon</strong>
+		</div>
+		<div></div>
+		</div>
+
+
+		<div id="Tue"><div class="middleTop"><strong>Tue</strong></div><div></div></div>
+		<div id="Wed"><div class="middleTop"><strong>Wed</strong></div><div></div></div>
+		<div id="Thu"><div class="middleTop"><strong>Thu</strong></div><div></div></div>
+		<div id="Fri"><div class="middleTop"><strong>Fri</strong></div><div></div></div>
+	</div>
+</div>
+
+<div id="layerId" class="layer">
+	<div id="backLayer" class="bg"></div>
+	<div id="addLayer" class="pop-layer" style="width: 400px; padding: 10px;">
+		<div class="layerHeader rAr">
+			<img  id="btnClose" src="img/delete.png" alt="x" onclick="function()">
+		</div>
+		<div class="layerContent">
+			<div class="ctgr">
+				<select id="itemDay" name="itemDay" style="width: 100%;">
+					<option value="Mon">Monday</option>
+					<option value="Tue">Tuesday</option>
+					<option value="Wed">Wednesday</option>
+					<option value="Thu">Thursday</option>
+					<option value="Fri">Friday</option>
+				</select>
+			</div>
+			<div class="ctgr" id="priorDiv">
+				<input type="text" id="itemPrior" name="itemPrior" placeholder="Priority" style="width: 100%;" >
+			</div>
+			<div class="ctgr">
+				<input type="text" id="itemName" name="itemName" placeholder="Item" style="width: 100%;" >
+			</div>
+			<div class="ctgr">
+				<textarea rows="5" id="itemContent" name="itemContent" placeholder="Content" style="width: 100%;"></textarea>
+			</div>
+			<div class="ctgr rAr">
+				<input type="button" id="btnLayer" value="Add" onclick="addItem()" style="width: 100px;" >
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
